@@ -1,0 +1,26 @@
+<config debug="1">
+    <Serial>
+        <port>COM4</port>
+        <baudrate>115200</baudrate>
+    </Serial>
+    <drawsettings>
+        <speed>1.0000</speed>
+    </drawsettings>
+    <gcode>
+        <query>?</query>
+        <stop>!</stop>
+        <start>~</start>
+        <reset>$h</reset>
+        <angle>M21</angle>
+        <cartesian>M20</cartesian>
+        <calibration_start>M40</calibration_start>
+        <calibration_finish>M41</calibration_finish>
+    </gcode>
+    <unity enable="0"/>
+    <blockly enable="1"/>
+    <leapmotion enable="0">
+        <interval>1000</interval>
+        <grab>M3S100M4E100</grab>
+        <release>M3S0M4E0</release>
+    </leapmotion>
+</config>

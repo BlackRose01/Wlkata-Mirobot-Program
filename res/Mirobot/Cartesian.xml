@@ -1,0 +1,80 @@
+﻿<config>
+<reset x="0" y="0" z="0" a="0" b="0" c="0"></reset>
+<drawing 
+a11="1" a12="0" a13="0" a14="0"
+a21="0" a22="1" a23="0" a24="0"
+a31="0" a32="0" a33="1" a34="11"
+>
+<!--配置同步绘图>
+offset_*为简单的平移选项，如果涉及到放大旋转，还是要在相应的数据文件中添加转换矩阵。
+6轴机械臂输出为每个关节(1-6)相应的旋转角度，对应的GCode指令必须包含6个参数选项。
+<-->
+<up-code>M20 G90 G01 X%0.4f Y%0.4f Z%0.4f A%0.4f B%0.4f C%0.4f F1800</up-code>
+<down-code>M20 G90 G01 X%0.4f Y%0.4f Z%0.4f A%0.4f B%0.4f C%0.4f F200</down-code>
+<pen-up>10</pen-up>
+<before-up>M3S0</before-up>
+<after-down>M3S1000</after-down>
+</drawing>
+<group>
+<button name="btn_reset_data" pname="ZeroPosition" gcode="M20G90G01X202Y0Z181A0B0C0">Zero Positon</button>
+</group>
+
+
+<group>
+<label>X:</label>
+<button name="btn_Gray" pname="x_dec">X-</button>
+<button name="btn_Gray" pname="x_inc">X+</button>
+<edit stretch="1" pname="px">0</edit>
+</group>
+<group>
+<label>Y:</label>
+<button name="btn_Gray" pname="y_dec">Y-</button>
+<button name="btn_Gray" pname="y_inc">Y+</button>
+<edit stretch="1" pname="py">0</edit>
+</group>
+<group>
+<label>Z:</label>
+<button name="btn_Gray" pname="z_dec">Z-</button>
+<button name="btn_Gray" pname="z_inc">Z+</button>
+<edit stretch="1" pname="pz">0</edit>
+</group>
+<group>
+<label>RX:</label>
+<button name="btn_Gray" pname="a_dec">PX-</button>
+<button name="btn_Gray" pname="a_inc">PX+</button>
+<edit stretch="1" pname="pa">0</edit>
+</group>
+<group>
+<label>RY:</label>
+<button name="btn_Gray" pname="b_dec">PY-</button>
+<button name="btn_Gray" pname="b_inc">PY+</button>
+<edit stretch="1" pname="pb">0</edit>
+</group>
+<group>
+<label>RZ:</label>
+<button name="btn_Gray" pname="c_dec">PZ-</button>
+<button name="btn_Gray" pname="c_inc">PZ+</button>
+<edit stretch="1" pname="pc">0</edit>
+</group>
+<group>
+<label stretch="1">Speed:</label>
+<button name="btn_Gray" gcode="@speed">500</button>
+<button name="btn_Gray" gcode="@speed">2000</button>
+<edit stretch="1" pname="speed">2000</edit>
+</group>
+<group>
+<label width="70">Step:</label>
+<button name="btn_Gray" gcode="@precision">1</button>
+<button name="btn_Gray" gcode="@precision">5</button>
+<button name="btn_Gray" gcode="@precision">10</button>
+<button name="btn_Gray" gcode="@precision">15</button>
+<edit width="70" pname="precision">5</edit>
+</group>
+<group>
+<button name="btn_reset_data" pname="Cartesian" gcode="M3S1000M4E65">End-effector ON</button>
+<button name="btn_reset_data" pname="Cartesian" gcode="M3S0M4E45">End-effector OFF</button>
+</group>
+<group>
+<button name="btn_Gray" pname="SetPenHeight">Set Pen Height</button>
+</group>
+</config>
