@@ -1,0 +1,60 @@
+﻿<config>
+<reset x="0" y="0" z="0" a="0" b="0" c="0"></reset>
+<group>
+<button name="btn_reset_data" pname="ZeroPosition" gcode="M21G90G01X0Y0Z0A0B0C0">Zero Positon</button>
+</group>
+<group>
+<label>J1:</label>
+<button name="btn_Gray" pname="x_dec">J1-</button>
+<button name="btn_Gray" pname="x_inc">J1+</button>
+<edit stretch="1" pname="px">0</edit>
+</group>
+<group>
+<label>J2:</label>
+<button name="btn_Gray" pname="y_dec">J2-</button>
+<button name="btn_Gray" pname="y_inc">J2+</button>
+<edit stretch="1" pname="py">0</edit>
+</group>
+<group>
+<label>J3:</label>
+<button name="btn_Gray" pname="z_dec">J3-</button>
+<button name="btn_Gray" pname="z_inc">J3+</button>
+<edit stretch="1" pname="pz">0</edit>
+</group>
+<group>
+<label>J4:</label>
+<button name="btn_Gray" pname="a_dec">J4-</button>
+<button name="btn_Gray" pname="a_inc">J4+</button>
+<edit stretch="1" pname="pa">0</edit>
+</group>
+<group>
+<label>J5:</label>
+<button name="btn_Gray" pname="b_dec">J5-</button>
+<button name="btn_Gray" pname="b_inc">J5+</button>
+<edit stretch="1" pname="pb">0</edit>
+</group>
+<group>
+<label>J6:</label>
+<button name="btn_Gray" pname="c_dec">J6-</button>
+<button name="btn_Gray" pname="c_inc">J6+</button>
+<edit stretch="1" pname="pc">0</edit>
+</group>
+<group>
+<label stretch="1">Speed:</label>
+<button name="btn_Gray" gcode="@speed">500</button>
+<button name="btn_Gray" gcode="@speed">2000</button>
+<edit stretch="1" pname="speed">2000</edit>
+</group>
+<group>
+<label width="70">Step:</label>
+<button name="btn_Gray" gcode="@precision">1</button>
+<button name="btn_Gray" gcode="@precision">5</button>
+<button name="btn_Gray" gcode="@precision">10</button>
+<button name="btn_Gray" gcode="@precision">15</button>
+<edit width="70" pname="precision">5</edit>
+</group>
+<group>
+<button name="btn_reset_data" pname="Cartesian" gcode="M3S1000M4E65">End-effector ON</button>
+<button name="btn_reset_data" pname="Cartesian" gcode="M3S0M4E40">End-effector OFF</button>
+</group>
+</config>

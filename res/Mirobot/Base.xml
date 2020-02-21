@@ -1,0 +1,20 @@
+<config>
+<param>
+<p alpha="0" a="0" d="78" theta="0"></p>
+<p alpha="-90" a="32" d="0" theta="-90"></p>
+<p alpha="0" a="108" d="0" theta="0"></p>
+<p alpha="-90" a="20" d="176" theta="0"></p>
+<p alpha="90" a="0" d="0" theta="90"></p>
+<p alpha="90" a="0" d="-63" theta="0"></p>
+</param>
+<trigger>
+<t name="Gripper" keytype="list">
+<key name="On" value="1" gcode="M3S1000M4E65"/>
+<key name="Off" value="0" gcode="M3S0M4E45"/>
+</t>
+<t name="SuctionCup"  keytype="list">
+<key name="On" value="1" gcode="M3S1000M4E65"/>
+<key name="Off" value="0" gcode="M3S0M4E45"/>
+</t>
+</trigger>
+</config>
